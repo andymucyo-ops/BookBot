@@ -6,7 +6,7 @@ def main():
     try:
         path_to_book = sys.argv[1]
     except IndexError:
-        print("missing path/to/book argument!")
+        print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
 
 
