@@ -1,23 +1,23 @@
-def get_book_txt() -> str:
+def get_book_txt(path_to_book:str) -> str:
     #return whole book content as a string
-    with open("./books/frankenstein.txt", "r") as f:
+    with open(path_to_book, "r") as f:
         file_content = f.read() 
         
         return file_content
 
 
-def get_num_words() -> None:
+def get_num_words(path_to_book) -> None:
     #prints number of words in the book
-    list_words: list[str] = get_book_txt().split()
+    list_words: list[str] = get_book_txt(path_to_book).split()
 
     num_words: int = len(list_words)
 
     print(f"Found {num_words} total words")
 
 
-def get_char_freq() -> dict[str,int]:
+def get_char_freq(path_to_book) -> dict[str,int]:
     #retruns dictionnary with character occurence
-    full_txt: str = get_book_txt().lower()
+    full_txt: str = get_book_txt(path_to_book).lower()
 
     char_freq: dict[str,int] = {}
 
@@ -30,9 +30,9 @@ def get_char_freq() -> dict[str,int]:
     return char_freq
 
 
-def sort_chars() -> None: 
+def sort_chars(path_to_book) -> None: 
     #sorts characters by highest frequency and prints them
-    char_freq: dict[str,int] = get_char_freq()
+    char_freq: dict[str,int] = get_char_freq(path_to_book)
 
     sorted_char_freq: dict[str,int] = dict(sorted(char_freq.items(), key=lambda item: item[1], reverse = True))
    
@@ -52,7 +52,7 @@ def sort_chars() -> None:
     #exclude non-alphabetical characters from final print
     for i in range(0,len(sorted_char_freq_list)):
         if sorted_char_freq_list[i]['char'].isalpha():
-            print(f"'{sorted_char_freq_list[i]['char']}': {sorted_char_freq_list[i]['num']}")
+            print(f"- {sorted_char_freq_list[i]['char']}: {sorted_char_freq_list[i]['num']}")
 
 
     
