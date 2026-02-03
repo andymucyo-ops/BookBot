@@ -18,7 +18,7 @@ def get_num_words() -> None:
 def get_char_freq() -> dict[str,int]:
     #retruns dictionnary with character occurence
 
-    full_txt: str = get_book_txt().lower().replace(" ","").replace("\n","")
+    full_txt: str = get_book_txt().lower()
 
     char_freq: dict[str,int] = {}
 
@@ -53,7 +53,8 @@ def sort_chars() -> None:
 
     
     for i in range(0,len(sorted_char_freq_list)):
-        print(f"'{sorted_char_freq_list[i]['char']}': {sorted_char_freq_list[i]['num']}")
+        if sorted_char_freq_list[i]['char'].isalpha():
+            print(f"'{sorted_char_freq_list[i]['char']}': {sorted_char_freq_list[i]['num']}")
 
 
     # print(sorted_char_freq)
