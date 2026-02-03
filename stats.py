@@ -18,7 +18,7 @@ def get_num_words() -> None:
 def get_char_freq() -> dict[str,int]:
     #retruns dictionnary with character occurence
 
-    full_txt: str = get_book_txt().lower()
+    full_txt: str = get_book_txt().lower().lstrip()
 
     char_freq: dict[str,int] = {}
 
@@ -28,11 +28,14 @@ def get_char_freq() -> dict[str,int]:
             char_freq[char] = 0
         char_freq[char] += 1
 
+
+    # for char in char_freq:
+    #     print(f"- {str(char)}: {char_freq[char]}")
     return char_freq
-
-
+    
+    
 if __name__ == "__main__":
 
     get_book_txt()
     get_num_words()
-    print(get_char_freq())
+    get_char_freq()
