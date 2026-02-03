@@ -19,7 +19,6 @@ def get_char_freq() -> dict[str,int]:
     #retruns dictionnary with character occurence
 
     full_txt: str = get_book_txt().lower()
-    print(full_txt[:5])
 
     char_freq: dict[str,int] = {}
 
