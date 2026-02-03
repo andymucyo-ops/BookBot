@@ -1,17 +1,28 @@
+import sys
 from stats import get_book_txt, get_char_freq, get_num_words, sort_chars # noqa: F401
 
 def main():
-    # get_book_txt()
-    # # print(get_book_txt())
-    # get_num_words()
-    # print("---------------------------")
-    # print(get_char_freq())
+
+    try:
+        path_to_book = sys.argv[1]
+    except IndexError:
+        print("missing path/to/book argument!")
+        sys.exit(1)
+
+
     print("==========BOOK BOT==========")
-    print("Analyzing book found at books/frankenstein.txt...")
+
+    print(f"Analyzing book found at {path_to_book}...")
+    
+    get_book_txt(path_to_book)
+    
     print("----------Word Count----------")
-    get_num_words()
+    
+    get_num_words(path_to_book)
+    
     print("----------Character Count----------")
-    sort_chars()
+    
+    sort_chars(path_to_book)
 
 
 
