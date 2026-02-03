@@ -16,11 +16,8 @@ def get_num_words() -> None:
 
 
 def main():
-
     get_book_txt()
-
     # print(get_book_txt())
-
     get_num_words()
 
 
