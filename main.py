@@ -4,6 +4,7 @@ def main():
     get_book_txt()
     # print(get_book_txt())
     get_num_words()
+    print("---------------------------")
     print(get_char_freq())
 
 
