@@ -18,7 +18,7 @@ def get_num_words() -> None:
 def get_char_freq() -> dict[str,int]:
     #retruns dictionnary with character occurence
 
-    full_txt: str = get_book_txt().lower().lstrip()
+    full_txt: str = get_book_txt().lower().replace(" ","").replace("\n","")
 
     char_freq: dict[str,int] = {}
 
@@ -32,10 +32,36 @@ def get_char_freq() -> dict[str,int]:
     # for char in char_freq:
     #     print(f"- {str(char)}: {char_freq[char]}")
     return char_freq
-    
-    
-if __name__ == "__main__":
 
-    get_book_txt()
-    get_num_words()
-    get_char_freq()
+def sort_chars() -> None: 
+    char_freq: dict[str,int] = get_char_freq()
+
+    sorted_char_freq: dict[str,int] = dict(sorted(char_freq.items(), key=lambda item: item[1], reverse = True))
+   
+    
+
+    char_list = [char for char in sorted_char_freq]
+    # print(f"char_list: {char_list}")
+
+    num_list = [sorted_char_freq[char] for char in sorted_char_freq]
+    # print(f"num_list: {num_list}")
+    
+    
+    sorted_char_freq_list: list = []
+    for i in range(0,len(char_list)):
+        sorted_char_freq_list.append(dict(char = char_list[i] , num = num_list[i]))
+
+    
+    for i in range(0,len(sorted_char_freq_list)):
+        print(f"'{sorted_char_freq_list[i]['char']}': {sorted_char_freq_list[i]['num']}")
+
+
+    # print(sorted_char_freq)
+    
+
+if __name__ == "__main__":
+    #
+    # get_book_txt()
+    # get_num_words()
+    # get_char_freq()
+    sort_chars()
