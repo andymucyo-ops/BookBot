@@ -12,11 +12,13 @@ python3 [download python](https://www.python.org/downloads/)
 
 - clone this repo: 
     ```{bash} 
-    git clone https://github.com/andymucyo-ops/BookBot```
+    git clone https://github.com/andymucyo-ops/BookBot
+    ```
 
 - create a books directory 
     ```{bash} 
-    mkdir books```
+    mkdir books
+    ```
 
 - download a few books to try the CLI tool on:
 
@@ -27,4 +29,7 @@ python3 [download python](https://www.python.org/downloads/)
     
     wget -O books/prideandprejudice.txt https://storage.googleapis.com/qvault-webapp-dynamic-assets/course_assets/prideandprejudice.txt
    ```
-- run as follows, from project root: ```{bash} python3 main.py <path_to_book>```
+- run as follows, from project root: 
+    ```{bash} 
+    python3 main.py <path_to_book>
+    ```
