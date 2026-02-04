@@ -10,9 +10,13 @@ python3 [download python](https://www.python.org/downloads/)
 
 ### How to run it
 
-- clone this repo: ```{bash} git clone https://github.com/andymucyo-ops/BookBot```
+- clone this repo: 
+    ```{bash} 
+    git clone https://github.com/andymucyo-ops/BookBot```
 
-- create a books directory ```{bash} mkdir books```
+- create a books directory 
+    ```{bash} 
+    mkdir books```
 
 - download a few books to try the CLI tool on:
 
